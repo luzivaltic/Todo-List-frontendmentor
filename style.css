@@ -1,0 +1,273 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+:root {
+    --bright-blue : hsl(220, 98%, 61%);
+    --dark-blue : hsl( 235, 21% , 11% );
+    --dark-desaturated-blue : hsl(235, 24%, 19%);
+    --cross : #777A92;
+    --text-color: rgba(255, 255, 255, 0.623);
+    --brighter : white;
+    --circle-color : rgba(255, 255, 255, 0.11);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    transition: 0.25s;
+}
+
+body {
+    background-color: var(--dark-blue);
+    min-height: 100vh;
+    color: hsl(0, 0%, 98%);
+    color: hsl(236, 33%, 92%);
+    color: hsl(233, 11%, 84%);
+    color: hsl(236, 9%, 61%);
+    color: hsl(235, 19%, 35%);
+}
+
+.image-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    background-image: url("./images/bg-desktop-dark.jpg");
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.container {
+    position: relative;
+    top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.text-container {
+    position: relative;
+    display: inline;
+    height: 0px;
+    width: 475px;
+    top: 10%;
+}
+
+.text-container .name {
+    position: relative;
+    color: rgba(255, 255, 255, 0.884);
+    font-size: 35px;
+    letter-spacing: 10px;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+.text-container .mode {
+    position: absolute;
+    z-index: 10000;
+    right: 0px;
+    top: 0px;
+}
+
+.text-container input {
+    width: 475px;
+    height: 100%;
+    background-color: var(--dark-desaturated-blue);
+    padding: 10px 60px;
+    border: none;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 18px;
+    outline: none;
+}
+
+.text-container .circle {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    padding: 5px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    /* background-color: black; */
+    /* border-image-slice: 1;
+    border-image-source:  */
+    /* background: linear-gradient( 120deg , hsl( 192 , 100% , 67% ) , hsl( 280, 87% , 65% ) ); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--circle-color);
+}
+
+.text-container .circle .insider.active {
+    background: linear-gradient( 120deg , hsl( 192 , 100% , 67% ) , hsl( 280, 87% , 65% ) ); 
+}
+
+.text-container .circle .insider {
+    position: absolute;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--dark-desaturated-blue);
+    /* background-color: transparent; */
+    /* background: linear-gradient( 120deg , hsl( 192 , 100% , 67% ) , hsl( 280, 87% , 65% ) ); */
+    border-radius: 50%;
+    z-index: 1000000;
+}
+
+.text-container .circle:hover {
+    background: linear-gradient( 120deg , hsl( 192 , 100% , 67% ) , hsl( 280, 87% , 65% ) );
+}
+
+.text-container .circle img {
+    opacity: 0;
+    z-index: 10000000;
+}
+
+.text-container .circle img.active {
+    opacity: 1;
+}
+
+.text-container form {
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+
+.text-container form .input-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.text-container .todo-list {
+    position: relative;
+    top: 30px;
+    border-radius: 5px;
+    width: 475px;
+    overflow: hidden;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.384);
+}
+
+.text-container .todo-list .task {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: var(--dark-desaturated-blue);
+    padding: 10px 60px;
+    color: #777A92;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.096);
+}
+
+.text-container .todo-list .task .task-name {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-color);
+    font-size: 19px;
+}
+
+.text-container .todo-list .task .task-name::first-letter {
+    text-transform: uppercase;
+}
+
+.text-container .todo-list .task .task-name.active {
+    color: var(--cross);
+    text-decoration: line-through;
+}
+
+
+.text-container .todo-list .status-bar {
+    position: relative;
+    background-color: var(--dark-desaturated-blue);
+    width: 100%;
+    height: 50px;
+    color: var(--text-color);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    text-align: center;
+    font-size: 15px;
+}
+
+.text-container .todo-list .status-bar .center-text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.text-container .todo-list .status-bar .status-options {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.text-container .todo-list .status-bar .status-options .option {
+    position: relative;
+    display: inline;
+    margin-right: 10px;
+    left: -10px;
+    cursor: pointer;
+}
+
+.text-container .todo-list .status-bar .status-options .option:hover,
+.text-container .todo-list .status-bar .clear:hover {
+    color: var(--brighter);
+}
+
+.text-container .todo-list .status-bar .clear {
+    position: relative;
+    right: 20px;
+    cursor: pointer;
+}
+
+.text-container .todo-list .task .cross-mark {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.text-container .todo-list .task:hover .cross-mark {
+    opacity: 1;
+}
+
+.notice {
+    position: absolute;
+    z-index: 100000000000;
+    text-align: center;
+    width: 100%;
+    bottom: 50px;
+    margin-top: 20px;
+    background-color: black;
+}
+
+@media only screen and (max-width: 475px) {
+
+    .text-container {
+        width: 95%;
+    }
+
+    .text-container .todo-list {
+        width: 100%;
+    }
+
+    .text-container .todo-list .task {
+        width: 100%;
+    }
+    .text-container input {
+        width: 100%;
+    }
+}
