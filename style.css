@@ -97,6 +97,7 @@ body {
     top: 50%;
     left: 20px;
     transform: translateY(-50%);
+    cursor: pointer;
     /* background-color: black; */
     /* border-image-slice: 1;
     border-image-source:  */
